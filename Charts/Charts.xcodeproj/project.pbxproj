@@ -12,7 +12,6 @@
 		5B4BCD401AA9C4930063F019 /* ChartTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4BCD3F1AA9C4930063F019 /* ChartTransformer.swift */; };
 		5B6556F71AB72BA000FFBFD3 /* ChartComponentBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6556F61AB72BA000FFBFD3 /* ChartComponentBase.swift */; };
 		5B680D1D1A9D16F90026A057 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B680D1C1A9D16F90026A057 /* UIKit.framework */; };
-		5B680D211A9D17C30026A057 /* ChartLimitLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC6C1A9D151C00CE82E1 /* ChartLimitLine.swift */; };
 		5B680D271A9D17C30026A057 /* ChartColorTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC791A9D151C00CE82E1 /* ChartColorTemplates.swift */; };
 		5B680D281A9D17C30026A057 /* ChartHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC7A1A9D151C00CE82E1 /* ChartHighlight.swift */; };
 		5B680D291A9D17C30026A057 /* ChartSelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC7B1A9D151C00CE82E1 /* ChartSelInfo.swift */; };
@@ -54,7 +53,6 @@
 		5BA8EC401A9D14DC00CE82E1 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA8EC441A9D14DC00CE82E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BA8EC671A9D151C00CE82E1 /* ChartViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewBase.swift; sourceTree = "<group>"; };
-		5BA8EC6C1A9D151C00CE82E1 /* ChartLimitLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartLimitLine.swift; sourceTree = "<group>"; };
 		5BA8EC791A9D151C00CE82E1 /* ChartColorTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColorTemplates.swift; sourceTree = "<group>"; };
 		5BA8EC7A1A9D151C00CE82E1 /* ChartHighlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartHighlight.swift; sourceTree = "<group>"; };
 		5BA8EC7B1A9D151C00CE82E1 /* ChartSelInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSelInfo.swift; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				5B6556F61AB72BA000FFBFD3 /* ChartComponentBase.swift */,
-				5BA8EC6C1A9D151C00CE82E1 /* ChartLimitLine.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -266,7 +263,6 @@
 			files = (
 				5B680D281A9D17C30026A057 /* ChartHighlight.swift in Sources */,
 				5B4BCD3E1AA9C0A60063F019 /* ChartFillFormatter.swift in Sources */,
-				5B680D211A9D17C30026A057 /* ChartLimitLine.swift in Sources */,
 				5B6A54DB1AA74516000F57C2 /* PieChartData.swift in Sources */,
 				5B6A54891AA66A1A000F57C2 /* PieChartRenderer.swift in Sources */,
 				5B378F171AD500A4009414A4 /* ChartAnimationEasing.swift in Sources */,
