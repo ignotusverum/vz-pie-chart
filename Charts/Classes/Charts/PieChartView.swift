@@ -64,8 +64,6 @@ public class PieChartView: PieRadarChartViewBase
         renderer!.drawExtras(context: context);
         
         renderer!.drawValues(context: context);
-        
-        drawDescription(context: context);
     }
     
     internal override func calculateOffsets()

@@ -120,8 +120,8 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     /// An extra offset to be appended to the viewport's left
     public var extraLeftOffset: CGFloat = 0.0
     
-    public func setExtraOffsets(#left: CGFloat, top: CGFloat, right: CGFloat, bottom: CGFloat)
-    {
+    public func setExtraOffsets(#left: CGFloat, top: CGFloat, right: CGFloat, bottom: CGFloat) {
+        
         extraLeftOffset = left;
         extraTopOffset = top;
         extraRightOffset = right;
@@ -130,27 +130,27 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     
     // MARK: - Initializers
     
-    public override init(frame: CGRect)
-    {
+    public override init(frame: CGRect) {
+        
         super.init(frame: frame);
         self.backgroundColor = UIColor.clearColor();
         initialize();
     }
     
-    public required init(coder aDecoder: NSCoder)
-    {
+    public required init(coder aDecoder: NSCoder) {
+        
         super.init(coder: aDecoder);
         initialize();
     }
     
-    deinit
-    {
+    deinit {
+        
         self.removeObserver(self, forKeyPath: "bounds");
         self.removeObserver(self, forKeyPath: "frame");
     }
     
-    internal func initialize()
-    {
+    internal func initialize() {
+        
         _animator = ChartAnimator();
         _animator.delegate = self;
 
@@ -171,16 +171,12 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     // MARK: - ChartViewBase
     
     /// The data for the chart
-    public var data: ChartData?
-    {
-        get
-        {
+    public var data: ChartData? {
+        get {
             return _data;
         }
-        set
-        {
-            if (newValue == nil || newValue?.yValCount == 0)
-            {
+        set {
+            if (newValue == nil || newValue?.yValCount == 0) {
                 println("Charts: data argument is nil on setData()");
                 return;
             }
@@ -197,76 +193,69 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     }
     
     /// Clears the chart from all data (sets it to null) and refreshes it (by calling setNeedsDisplay()).
-    public func clear()
-    {
+    public func clear() {
+        
         _data = nil;
         _dataNotSet = true;
         setNeedsDisplay();
     }
     
     /// Removes all DataSets (and thereby Entries) from the chart. Does not remove the x-values. Also refreshes the chart by calling setNeedsDisplay().
-    public func clearValues()
-    {
-        if (_data !== nil)
-        {
+    public func clearValues() {
+        
+        if (_data !== nil) {
             _data.clearValues();
         }
+        
         setNeedsDisplay();
     }
     
     /// Returns true if the chart is empty (meaning it's data object is either null or contains no entries).
-    public func isEmpty() -> Bool
-    {
-        if (_data == nil)
-        {
+    public func isEmpty() -> Bool {
+        
+        if (_data == nil) {
             return true;
         }
-        else
-        {
-            
-            if (_data.yValCount <= 0)
-            {
+        else {
+            if (_data.yValCount <= 0) {
                 return true;
             }
-            else
-            {
+            else {
                 return false;
             }
         }
     }
     
     /// Lets the chart know its underlying data has changed and should perform all necessary recalculations.
-    public func notifyDataSetChanged()
-    {
+    public func notifyDataSetChanged() {
+        
         fatalError("notifyDataSetChanged() cannot be called on ChartViewBase");
     }
     
     /// calculates the offsets of the chart to the border depending on the position of an eventual legend or depending on the length of the y-axis and x-axis labels and their position
-    internal func calculateOffsets()
-    {
+    internal func calculateOffsets() {
+        
         fatalError("calculateOffsets() cannot be called on ChartViewBase");
     }
     
     /// calcualtes the y-min and y-max value and the y-delta and x-delta value
-    internal func calcMinMax()
-    {
+    internal func calcMinMax() {
+        
         fatalError("calcMinMax() cannot be called on ChartViewBase");
     }
     
     /// calculates the required number of digits for the values that might be drawn in the chart (if enabled), and creates the default value formatter
-    internal func calculateFormatter(#min: Double, max: Double)
-    {
+    internal func calculateFormatter(#min: Double, max: Double) {
         // check if a custom formatter is set or not
         var reference = Double(0.0);
         
-        if (_data == nil || _data.xValCount < 2)
-        {
+        if (_data == nil || _data.xValCount < 2) {
+            
             var absMin = fabs(min);
             var absMax = fabs(max);
             reference = absMin > absMax ? absMin : absMax;
         }
-        else
-        {
+        else {
             reference = fabs(max - min);
         }
         
@@ -276,13 +265,13 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
         _defaultValueFormatter.minimumFractionDigits = digits;
     }
     
-    public override func drawRect(rect: CGRect)
-    {
+    public override func drawRect(rect: CGRect) {
+        
         let context = UIGraphicsGetCurrentContext();
         let frame = self.bounds;
         
-        if (_dataNotSet || _data === nil || _data.yValCount == 0)
-        { // check if there is data
+        if (_dataNotSet || _data === nil || _data.yValCount == 0) {
+            // check if there is data
             
             CGContextSaveGState(context);
             
@@ -290,8 +279,8 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
             
             ChartUtils.drawText(context: context, text: noDataText, point: CGPoint(x: frame.width / 2.0, y: frame.height / 2.0), align: .Center, attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: infoTextColor]);
             
-            if (noDataTextDescription != nil && count(noDataTextDescription!) > 0)
-            {   
+            if (noDataTextDescription != nil && count(noDataTextDescription!) > 0) {
+                
                 var textOffset = -infoFont.lineHeight / 2.0;
                 
                 ChartUtils.drawText(context: context, text: noDataTextDescription!, point: CGPoint(x: frame.width / 2.0, y: frame.height / 2.0 + textOffset), align: .Center, attributes: [NSFontAttributeName: infoFont, NSForegroundColorAttributeName: infoTextColor]);
@@ -300,36 +289,11 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
             return;
         }
         
-        if (!_offsetsCalculated)
-        {
+        if (!_offsetsCalculated) {
+            
             calculateOffsets();
             _offsetsCalculated = true;
         }
-    }
-    
-    /// draws the description text in the bottom right corner of the chart
-    internal func drawDescription(#context: CGContext)
-    {
-        if (descriptionText.lengthOfBytesUsingEncoding(NSUTF16StringEncoding) == 0)
-        {
-            return;
-        }
-        
-        let frame = self.bounds;
-        
-        var attrs = [NSObject: AnyObject]();
-        
-        var font = descriptionFont;
-        
-        if (font == nil)
-        {
-            font = UIFont.systemFontOfSize(UIFont.systemFontSize());
-        }
-        
-        attrs[NSFontAttributeName] = font;
-        attrs[NSForegroundColorAttributeName] = descriptionTextColor;
-        
-        ChartUtils.drawText(context: context, text: descriptionText, point: CGPoint(x: frame.width - _viewPortHandler.offsetRight - 10.0, y: frame.height - _viewPortHandler.offsetBottom - 10.0 - font!.lineHeight), align: .Right, attributes: attrs);
     }
     
     // MARK: - Highlighting
@@ -659,77 +623,6 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     public var viewPortHandler: ChartViewPortHandler!
     {
         return _viewPortHandler;
-    }
-    
-    /// Returns the bitmap that represents the chart.
-    public func getChartImage(#transparent: Bool) -> UIImage
-    {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, opaque || !transparent, UIScreen.mainScreen().scale);
-        
-        var context = UIGraphicsGetCurrentContext();
-        var rect = CGRect(origin: CGPoint(x: 0, y: 0), size: bounds.size);
-        
-        if (opaque || !transparent)
-        {
-            // Background color may be partially transparent, we must fill with white if we want to output an opaque image
-            CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor);
-            CGContextFillRect(context, rect);
-            
-            if (self.backgroundColor !== nil)
-            {
-                CGContextSetFillColorWithColor(context, self.backgroundColor?.CGColor);
-                CGContextFillRect(context, rect);
-            }
-        }
-        
-        layer.renderInContext(UIGraphicsGetCurrentContext());
-        
-        var image = UIGraphicsGetImageFromCurrentImageContext();
-        
-        UIGraphicsEndImageContext();
-        
-        return image;
-    }
-    
-    public enum ImageFormat
-    {
-        case JPEG;
-        case PNG;
-    }
-    
-    /// Saves the current chart state with the given name to the given path on
-    /// the sdcard leaving the path empty "" will put the saved file directly on
-    /// the SD card chart is saved as a PNG image, example:
-    /// saveToPath("myfilename", "foldername1/foldername2");
-    ///
-    /// :filePath: path to the image to save
-    /// :format: the format to save
-    /// :compressionQuality: compression quality for lossless formats (JPEG)
-    ///
-    /// :returns: true if the image was saved successfully
-    public func saveToPath(path: String, format: ImageFormat, compressionQuality: Double) -> Bool
-    {
-        var image = getChartImage(transparent: format != .JPEG);
-
-        var imageData: NSData!;
-        switch (format)
-        {
-        case .PNG:
-            imageData = UIImagePNGRepresentation(image);
-            break;
-            
-        case .JPEG:
-            imageData = UIImageJPEGRepresentation(image, CGFloat(compressionQuality));
-            break;
-        }
-
-        return imageData.writeToFile(path, atomically: true);
-    }
-    
-    /// Saves the current state of the chart to the camera roll
-    public func saveToCameraRoll()
-    {
-        UIImageWriteToSavedPhotosAlbum(getChartImage(transparent: false), nil, nil, nil);
     }
     
     internal typealias VoidClosureType = () -> ()
