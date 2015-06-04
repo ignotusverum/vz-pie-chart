@@ -751,14 +751,7 @@ public class BarLineChartViewBase: ChartViewBase, UIGestureRecognizerDelegate
         if (isAnyAxisInverted && _closestDataSetToTouch !== nil
             && getAxis(_closestDataSetToTouch.axisDependency).isInverted)
         {
-            if (self is HorizontalBarChartView)
-            {
-                translation.x = -translation.x;
-            }
-            else
-            {
-                translation.y = -translation.y;
-            }
+            translation.y = -translation.y;
         }
         
         var originalMatrix = _viewPortHandler.touchMatrix;
