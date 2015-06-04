@@ -171,59 +171,6 @@ public class ChartData: NSObject
                     _yMax = _dataSets[i].yMax;
                 }
             }
-            
-            // left axis
-            var firstLeft = getFirstLeft();
-
-            if (firstLeft !== nil)
-            {
-                _leftAxisMax = firstLeft!.yMax;
-                _leftAxisMin = firstLeft!.yMin;
-
-                for dataSet in _dataSets
-                {
-                    if (dataSet.axisDependency == .Left)
-                    {
-                        if (dataSet.yMin < _leftAxisMin)
-                        {
-                            _leftAxisMin = dataSet.yMin;
-                        }
-
-                        if (dataSet.yMax > _leftAxisMax)
-                        {
-                            _leftAxisMax = dataSet.yMax;
-                        }
-                    }
-                }
-            }
-
-            // right axis
-            var firstRight = getFirstRight();
-
-            if (firstRight !== nil)
-            {
-                _rightAxisMax = firstRight!.yMax;
-                _rightAxisMin = firstRight!.yMin;
-                
-                for dataSet in _dataSets
-                {
-                    if (dataSet.axisDependency == .Right)
-                    {
-                        if (dataSet.yMin < _rightAxisMin)
-                        {
-                            _rightAxisMin = dataSet.yMin;
-                        }
-
-                        if (dataSet.yMax > _rightAxisMax)
-                        {
-                            _rightAxisMax = dataSet.yMax;
-                        }
-                    }
-                }
-            }
-
-            // in case there is only one axis, adjust the second axis
-            handleEmptyAxis(firstLeft, firstRight: firstRight);
         }
     }
     
@@ -284,18 +231,6 @@ public class ChartData: NSObject
         return _yMin;
     }
     
-    public func getYMin(axis: ChartYAxis.AxisDependency) -> Double
-    {
-        if (axis == .Left)
-        {
-            return _leftAxisMin;
-        }
-        else
-        {
-            return _rightAxisMin;
-        }
-    }
-    
     /// returns the greatest y-value the data object contains.
     public var yMax: Double
     {
@@ -305,18 +240,6 @@ public class ChartData: NSObject
     public func getYMax() -> Double
     {
         return _yMax;
-    }
-    
-    public func getYMax(axis: ChartYAxis.AxisDependency) -> Double
-    {
-        if (axis == .Left)
-        {
-            return _leftAxisMax;
-        }
-        else
-        {
-            return _rightAxisMax;
-        }
     }
     
     /// returns the average length (in characters) across all values in the x-vals array
@@ -483,16 +406,8 @@ public class ChartData: NSObject
             _yMax = d.yMax;
             _yMin = d.yMin;
             
-            if (d.axisDependency == .Left)
-            {
-                _leftAxisMax = d.yMax;
-                _leftAxisMin = d.yMin;
-            }
-            else
-            {
-                _rightAxisMax = d.yMax;
-                _rightAxisMin = d.yMin;
-            }
+            _rightAxisMax = d.yMax;
+            _rightAxisMin = d.yMin;
         }
         else
         {
@@ -505,33 +420,18 @@ public class ChartData: NSObject
                 _yMin = d.yMin;
             }
             
-            if (d.axisDependency == .Left)
+            
+            if (_rightAxisMax < d.yMax)
             {
-                if (_leftAxisMax < d.yMax)
-                {
-                    _leftAxisMax = d.yMax;
-                }
-                if (_leftAxisMin > d.yMin)
-                {
-                    _leftAxisMin = d.yMin;
-                }
+                _rightAxisMax = d.yMax;
             }
-            else
+            if (_rightAxisMin > d.yMin)
             {
-                if (_rightAxisMax < d.yMax)
-                {
-                    _rightAxisMax = d.yMax;
-                }
-                if (_rightAxisMin > d.yMin)
-                {
-                    _rightAxisMin = d.yMin;
-                }
+                _rightAxisMin = d.yMin;
             }
         }
         
         _dataSets.append(d);
-        
-        handleEmptyAxis(getFirstLeft(), firstRight: getFirstRight());
     }
     
     public func handleEmptyAxis(firstLeft: ChartDataSet?, firstRight: ChartDataSet?)
@@ -612,30 +512,15 @@ public class ChartData: NSObject
             }
             
             var set = _dataSets[dataSetIndex];
-            if (set.axisDependency == .Left)
+
+            if (_rightAxisMax < e.value)
             {
-                if (_leftAxisMax < e.value)
-                {
-                    _leftAxisMax = e.value;
-                }
-                if (_leftAxisMin > e.value)
-                {
-                    _leftAxisMin = e.value;
-                }
+                _rightAxisMax = e.value;
             }
-            else
+            if (_rightAxisMin > e.value)
             {
-                if (_rightAxisMax < e.value)
-                {
-                    _rightAxisMax = e.value;
-                }
-                if (_rightAxisMin > e.value)
-                {
-                    _rightAxisMin = e.value;
-                }
+                _rightAxisMin = e.value;
             }
-            
-            handleEmptyAxis(getFirstLeft(), firstRight: getFirstRight());
             
             set.addEntry(e);
         }
@@ -724,31 +609,6 @@ public class ChartData: NSObject
         return -1;
     }
     
-    public func getFirstLeft() -> ChartDataSet?
-    {
-        for dataSet in _dataSets
-        {
-            if (dataSet.axisDependency == .Left)
-            {
-                return dataSet;
-            }
-        }
-        
-        return nil;
-    }
-    
-    public func getFirstRight() -> ChartDataSet?
-    {
-        for dataSet in _dataSets
-        {
-            if (dataSet.axisDependency == .Right)
-            {
-                return dataSet;
-            }
-        }
-        
-        return nil;
-    }
     
     /// Returns all colors used across all DataSet objects this object represents.
     public func getColors() -> [UIColor]?

@@ -41,9 +41,6 @@ public class ChartDataSet: NSObject
     
     /// the formatter used to customly format the values
     public var valueFormatter: NSNumberFormatter?
-    
-    /// the axis this DataSet should be plotted against.
-    public var axisDependency = ChartYAxis.AxisDependency.Left
 
     public var yVals: [ChartDataEntry] { return _yVals }
     public var yValueSum: Double { return _yValueSum }

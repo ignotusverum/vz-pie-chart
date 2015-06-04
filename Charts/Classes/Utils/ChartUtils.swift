@@ -63,51 +63,8 @@ internal class ChartUtils
         }
     }
 
-    /// Returns the index of the DataSet that contains the closest value on the y-axis. This is needed for highlighting.
-    internal class func closestDataSetIndex(valsAtIndex: [ChartSelInfo], value: Double, axis: ChartYAxis.AxisDependency?) -> Int
-    {
-        var index = -1;
-        var distance = DBL_MAX;
-        
-        for (var i = 0; i < valsAtIndex.count; i++)
-        {
-            var sel = valsAtIndex[i];
-            
-            if (axis == nil || sel.dataSet?.axisDependency == axis)
-            {
-                var cdistance = abs(sel.value - value);
-                if (cdistance < distance)
-                {
-                    index = valsAtIndex[i].dataSetIndex;
-                    distance = cdistance;
-                }
-            }
-        }
-        
-        return index;
-    }
     
-    /// Returns the minimum distance from a touch-y-value (in pixels) to the closest y-value (in pixels) that is displayed in the chart.
-    internal class func getMinimumDistance(valsAtIndex: [ChartSelInfo], val: Double, axis: ChartYAxis.AxisDependency) -> Double
-    {
-        var distance = DBL_MAX;
-        
-        for (var i = 0, count = valsAtIndex.count; i < count; i++)
-        {
-            var sel = valsAtIndex[i];
-            
-            if (sel.dataSet!.axisDependency == axis)
-            {
-                var cdistance = abs(sel.value - val);
-                if (cdistance < distance)
-                {
-                    distance = cdistance;
-                }
-            }
-        }
-        
-        return distance;
-    }
+    
     
     /// Calculates the position around a center point, depending on the distance from the center, and the angle of the position around the center.
     internal class func getPosition(#center: CGPoint, dist: CGFloat, angle: CGFloat) -> CGPoint
