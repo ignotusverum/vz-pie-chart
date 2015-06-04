@@ -24,7 +24,7 @@ public class ChartYAxis: ChartAxisBase
     public enum YAxisLabelPosition: Int
     {
         case OutsideChart
-        case InsideChart
+        case InsideChartl
     }
     
     ///  Enum that specifies the axis a DataSet should be plotted against, either Left or Right.
