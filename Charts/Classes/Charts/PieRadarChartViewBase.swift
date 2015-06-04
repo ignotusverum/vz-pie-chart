@@ -241,28 +241,6 @@ public class PieRadarChartViewBase: ChartViewBase
         return 0.0;
     }
     
-    /// Returns an array of SelInfo objects for the given x-index.
-    /// The SelInfo objects give information about the value at the selected index and the DataSet it belongs to.
-    public func getYValsAtIndex(xIndex: Int) -> [ChartSelInfo]
-    {
-        var vals = [ChartSelInfo]();
-        
-        for (var i = 0; i < _data.dataSetCount; i++)
-        {
-            var dataSet = _data.getDataSetByIndex(i);
-            
-            // extract all y-values from all DataSets at the given x-index
-            var yVal = dataSet!.yValForXIndex(xIndex);
-            
-            if (!isnan(yVal))
-            {
-                vals.append(ChartSelInfo(value: yVal, dataSetIndex: i, dataSet: dataSet!));
-            }
-        }
-        
-        return vals;
-    }
-    
     public var isRotationEnabled: Bool { return rotationEnabled; }
     
     /// flag that indicates if rotation is done with two fingers or one.
@@ -634,9 +612,7 @@ public class PieRadarChartViewBase: ChartViewBase
                     _lastHighlight = nil;
                 }
                 else
-                {
-                    var valsAtIndex = getYValsAtIndex(index);
-                    
+                {   
                     var dataSetIndex = 0;
                     
                     var h = ChartHighlight(xIndex: index, dataSetIndex: dataSetIndex);
