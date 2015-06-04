@@ -109,9 +109,6 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     /// if set to true, the marker is drawn when a value is clicked
     public var drawMarkers = true
     
-    /// the view that represents the marker
-    public var marker: ChartMarker?
-    
     private var _interceptTouchEvents = false
     
     /// An extra offset to be appended to the viewport's top
@@ -419,10 +416,6 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     internal func drawMarkers(#context: CGContext)
     {
         // if there is no marker view or drawing marker is disabled
-        if (marker === nil || !drawMarkers || !valuesToHighlight())
-        {
-            return;
-        }
 
         for (var i = 0, count = _indicesToHightlight.count; i < count; i++)
         {
@@ -440,20 +433,6 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
                 if (!_viewPortHandler.isInBounds(x: pos.x, y: pos.y))
                 {
                     continue;
-                }
-
-                // callbacks to update the content
-                marker!.refreshContent(entry: e, dataSetIndex: dataSetIndex);
-
-                let markerSize = marker!.size;
-                if (pos.y - markerSize.height <= 0.0)
-                {
-                    let y = markerSize.height - pos.y;
-                    marker!.draw(context: context, point: CGPoint(x: pos.x, y: pos.y + y));
-                }
-                else
-                {
-                    marker!.draw(context: context, point: pos);
                 }
             }
         }

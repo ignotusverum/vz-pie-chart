@@ -27,7 +27,6 @@
 		5B8EAF301AB32E15009697AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EAF2F1AB32E15009697AA /* Images.xcassets */; };
 		5B8EAF3D1AB32F27009697AA /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8EAF371AB32EA1009697AA /* Charts.framework */; };
 		5BB4B0721ACA710D00E2EF4D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8EAF371AB32EA1009697AA /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5BD47E5B1ABB0263008FCEC6 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD47E5A1ABB0263008FCEC6 /* BalloonMarker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +85,6 @@
 		5B8EAF261AB32CF5009697AA /* DemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBaseViewController.m; sourceTree = "<group>"; };
 		5B8EAF2F1AB32E15009697AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5B8EAF321AB32EA0009697AA /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../Charts/Charts.xcodeproj; sourceTree = "<group>"; };
-		5BD47E5A1ABB0263008FCEC6 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
 		5BD47E5C1ABB0273008FCEC6 /* ChartsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChartsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,7 +189,6 @@
 		5BD47E541ABB0177008FCEC6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5BD47E5A1ABB0263008FCEC6 /* BalloonMarker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -307,7 +304,6 @@
 			files = (
 				5B0CC7851ABB875400665592 /* PieChartViewController.m in Sources */,
 				5B57BBB81A9B26AA0036A6CC /* AppDelegate.m in Sources */,
-				5BD47E5B1ABB0263008FCEC6 /* BalloonMarker.swift in Sources */,
 				5B8EAF281AB32CF5009697AA /* DemoBaseViewController.m in Sources */,
 				5B57BBB51A9B26AA0036A6CC /* main.m in Sources */,
 			);
