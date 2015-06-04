@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B34EF9D0-FDA2-4902-882E-3D93D737F46F</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ChartsDemo</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D2DB5503FE619D3213839DE68ED794A53843F943</key>
 		<string>https://github.com/redcirclegame/vz-pie-chart.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ChartsDemo/ChartsDemo.xcodeproj</string>
+	<string>ChartsDemo/ChartsDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D2DB5503FE619D3213839DE68ED794A53843F943</key>
