@@ -13,7 +13,6 @@
 		5B6556F71AB72BA000FFBFD3 /* ChartComponentBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6556F61AB72BA000FFBFD3 /* ChartComponentBase.swift */; };
 		5B680D1D1A9D16F90026A057 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B680D1C1A9D16F90026A057 /* UIKit.framework */; };
 		5B680D1F1A9D17C30026A057 /* ChartAxisBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC6A1A9D151C00CE82E1 /* ChartAxisBase.swift */; };
-		5B680D201A9D17C30026A057 /* ChartLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC6B1A9D151C00CE82E1 /* ChartLegend.swift */; };
 		5B680D211A9D17C30026A057 /* ChartLimitLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC6C1A9D151C00CE82E1 /* ChartLimitLine.swift */; };
 		5B680D221A9D17C30026A057 /* ChartXAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC6D1A9D151C00CE82E1 /* ChartXAxis.swift */; };
 		5B680D231A9D17C30026A057 /* ChartYAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC6E1A9D151C00CE82E1 /* ChartYAxis.swift */; };
@@ -65,7 +64,6 @@
 		5BA8EC441A9D14DC00CE82E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BA8EC671A9D151C00CE82E1 /* ChartViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewBase.swift; sourceTree = "<group>"; };
 		5BA8EC6A1A9D151C00CE82E1 /* ChartAxisBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChartAxisBase.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		5BA8EC6B1A9D151C00CE82E1 /* ChartLegend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartLegend.swift; sourceTree = "<group>"; };
 		5BA8EC6C1A9D151C00CE82E1 /* ChartLimitLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartLimitLine.swift; sourceTree = "<group>"; };
 		5BA8EC6D1A9D151C00CE82E1 /* ChartXAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartXAxis.swift; sourceTree = "<group>"; };
 		5BA8EC6E1A9D151C00CE82E1 /* ChartYAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartYAxis.swift; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 			children = (
 				5BA8EC6A1A9D151C00CE82E1 /* ChartAxisBase.swift */,
 				5B6556F61AB72BA000FFBFD3 /* ChartComponentBase.swift */,
-				5BA8EC6B1A9D151C00CE82E1 /* ChartLegend.swift */,
 				5BA8EC6C1A9D151C00CE82E1 /* ChartLimitLine.swift */,
 				5B6A546A1AA5C23F000F57C2 /* ChartMarker.swift */,
 				5BA8EC6D1A9D151C00CE82E1 /* ChartXAxis.swift */,
@@ -325,7 +322,6 @@
 				5B6A546E1AA5D2DC000F57C2 /* ChartAnimator.swift in Sources */,
 				5B6556F71AB72BA000FFBFD3 /* ChartComponentBase.swift in Sources */,
 				5B680D2A1A9D17C30026A057 /* ChartUtils.swift in Sources */,
-				5B680D201A9D17C30026A057 /* ChartLegend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
