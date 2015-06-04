@@ -17,8 +17,7 @@ import Foundation
 import UIKit;
 
 @objc
-public protocol ChartViewDelegate
-{
+public protocol ChartViewDelegate {
     /// Called when a value has been selected inside the chart.
     /// :entry: The selected Entry.
     /// :dataSetIndex: The index in the datasets array of the data object the Entrys DataSet is in.
@@ -34,8 +33,7 @@ public protocol ChartViewDelegate
     optional func chartTranslated(chartView: ChartViewBase, dX: CGFloat, dY: CGFloat);
 }
 
-public class ChartViewBase: UIView, ChartAnimatorDelegate
-{
+public class ChartViewBase: UIView, ChartAnimatorDelegate {
     // MARK: - Properties
     
     /// custom formatter that is used instead of the auto-formatter if set
@@ -697,6 +695,7 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     // MARK: - ChartAnimatorDelegate
     
     public func chartAnimatorUpdated(chartAnimator: ChartAnimator) {
+        
         setNeedsDisplay();
     }
     
