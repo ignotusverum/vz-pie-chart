@@ -58,13 +58,7 @@
     _chartView.rotationAngle = 0.0;
     _chartView.rotationEnabled = YES;
     _chartView.centerText = @"iOS Charts\nby Daniel Cohen Gindi";
-    
-    ChartLegend *l = _chartView.legend;
-    l.position = ChartLegendPositionRightOfChart;
-    l.xEntrySpace = 7.0;
-    l.yEntrySpace = 0.0;
-    l.yOffset = 0.0;
-    
+
     _sliderX.value = 3.0;
     _sliderY.value = 100.0;
     [self slidersValueChanged:nil];

@@ -65,8 +65,6 @@ public class PieChartView: PieRadarChartViewBase
         
         renderer!.drawValues(context: context);
         
-        _legendRenderer.renderLegend(context: context);
-        
         drawDescription(context: context);
     }
     
@@ -307,11 +305,6 @@ public class PieChartView: PieRadarChartViewBase
         {
             return (renderer as! PieChartRenderer).drawCenterTextEnabled;
         }
-    }
-    
-    internal override var requiredBottomOffset: CGFloat
-    {
-        return _legend.font.pointSize * 2.0;
     }
     
     internal override var requiredBaseOffset: CGFloat

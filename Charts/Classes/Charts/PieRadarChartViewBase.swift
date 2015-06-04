@@ -74,11 +74,6 @@ public class PieRadarChartViewBase: ChartViewBase
         
         calcMinMax();
         
-        if (_legend !== nil)
-        {
-            _legendRenderer.computeLegend(_data);
-        }
-        
         calculateOffsets();
         
         setNeedsDisplay();
@@ -90,99 +85,6 @@ public class PieRadarChartViewBase: ChartViewBase
         var legendRight = CGFloat(0.0);
         var legendBottom = CGFloat(0.0);
         var legendTop = CGFloat(0.0);
-
-        if (_legend != nil && _legend.enabled)
-        {
-            var fullLegendWidth = min(_legend.neededWidth, _viewPortHandler.chartWidth * _legend.maxSizePercent);
-            fullLegendWidth += _legend.formSize + _legend.formToTextSpace;
-            
-            if (_legend.position == .RightOfChartCenter)
-            {
-                // this is the space between the legend and the chart
-                let spacing = CGFloat(13.0);
-
-                legendRight = fullLegendWidth + spacing;
-            }
-            else if (_legend.position == .RightOfChart)
-            {
-                // this is the space between the legend and the chart
-                let spacing = CGFloat(8.0);
-                
-                var legendWidth = fullLegendWidth + spacing;
-                var legendHeight = _legend.neededHeight + _legend.textHeightMax;
-
-                var c = self.midPoint;
-
-                var bottomRight = CGPoint(x: self.bounds.width - legendWidth + 15.0, y: legendHeight + 15);
-                var distLegend = distanceToCenter(x: bottomRight.x, y: bottomRight.y);
-
-                var reference = getPosition(center: c, dist: self.radius,
-                    angle: angleForPoint(x: bottomRight.x, y: bottomRight.y));
-
-                var distReference = distanceToCenter(x: reference.x, y: reference.y);
-                var minOffset = CGFloat(5.0);
-
-                if (distLegend < distReference)
-                {
-                    var diff = distReference - distLegend;
-                    legendRight = minOffset + diff;
-                }
-
-                if (bottomRight.y >= c.y && self.bounds.height - legendWidth > self.bounds.width)
-                {
-                    legendRight = legendWidth;
-                }
-            }
-            else if (_legend.position == .LeftOfChartCenter)
-            {
-                // this is the space between the legend and the chart
-                let spacing = CGFloat(13.0);
-
-                legendLeft = fullLegendWidth + spacing;
-            }
-            else if (_legend.position == .LeftOfChart)
-            {
-
-                // this is the space between the legend and the chart
-                let spacing = CGFloat(8.0);
-                
-                var legendWidth = fullLegendWidth + spacing;
-                var legendHeight = _legend.neededHeight + _legend.textHeightMax;
-
-                var c = self.midPoint;
-
-                var bottomLeft = CGPoint(x: legendWidth - 15.0, y: legendHeight + 15);
-                var distLegend = distanceToCenter(x: bottomLeft.x, y: bottomLeft.y);
-
-                var reference = getPosition(center: c, dist: self.radius,
-                    angle: angleForPoint(x: bottomLeft.x, y: bottomLeft.y));
-
-                var distReference = distanceToCenter(x: reference.x, y: reference.y);
-                var min = CGFloat(5.0);
-
-                if (distLegend < distReference)
-                {
-                    var diff = distReference - distLegend;
-                    legendLeft = min + diff;
-                }
-
-                if (bottomLeft.y >= c.y && self.bounds.height - legendWidth > self.bounds.width)
-                {
-                    legendLeft = legendWidth;
-                }
-            }
-            else if (_legend.position == .BelowChartLeft
-                    || _legend.position == .BelowChartRight
-                    || _legend.position == .BelowChartCenter)
-            {
-                var yOffset = self.requiredBottomOffset; // It's possible that we do not need this offset anymore as it is available through the extraOffsets
-                legendBottom = min(_legend.neededHeight + yOffset, _viewPortHandler.chartHeight * _legend.maxSizePercent);
-            }
-            
-            legendLeft += self.requiredBaseOffset;
-            legendRight += self.requiredBaseOffset;
-            legendTop += self.requiredBaseOffset;
-        }
         
         legendTop += self.extraTopOffset;
         legendRight += self.extraRightOffset;

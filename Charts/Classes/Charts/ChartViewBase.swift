@@ -78,7 +78,7 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     internal var _chartXMax = Double(0.0)
     
     /// the legend object containing all data associated with the legend
-    internal var _legend: ChartLegend!;
+
     
     /// delegate to receive chart events
     public weak var delegate: ChartViewDelegate?
@@ -89,7 +89,7 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     /// text that is displayed when the chart is empty that describes why the chart is empty
     public var noDataTextDescription: String?
     
-    internal var _legendRenderer: ChartLegendRenderer!
+
     
     /// object responsible for rendering the data
     public var renderer: ChartDataRendererBase?
@@ -162,9 +162,6 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
 
         _viewPortHandler = ChartViewPortHandler();
         _viewPortHandler.setChartDimens(width: bounds.size.width, height: bounds.size.height);
-        
-        _legend = ChartLegend();
-        _legendRenderer = ChartLegendRenderer(viewPortHandler: _viewPortHandler, legend: _legend);
         
         _defaultValueFormatter.minimumIntegerDigits = 1;
         _defaultValueFormatter.maximumFractionDigits = 1;
@@ -646,18 +643,7 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     {
         return _viewPortHandler.contentCenter;
     }
-    
-    /// Returns the Legend object of the chart. This method can be used to get an instance of the legend in order to customize the automatically generated Legend.
-    public var legend: ChartLegend
-    {
-        return _legend;
-    }
-    
-    /// Returns the renderer object responsible for rendering / drawing the Legend.
-    public var legendRenderer: ChartLegendRenderer!
-    {
-        return _legendRenderer;
-    }
+
     
     /// Returns the rectangle that defines the borders of the chart-value surface (into which the actual values are drawn).
     public var contentRect: CGRect
