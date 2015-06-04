@@ -190,16 +190,6 @@ public class PieRadarChartViewBase: ChartViewBase
         legendLeft += self.extraLeftOffset;
 
         var minOffset = CGFloat(10.0);
-        
-        if (self.isKindOfClass(RadarChartView))
-        {
-            let x = (self as! RadarChartView).xAxis;
-            
-            if (x.isEnabled)
-            {
-                minOffset = max(10.0, x.labelWidth);
-            }
-        }
 
         var offsetLeft = max(minOffset, legendLeft);
         var offsetTop = max(minOffset, legendTop);
@@ -746,12 +736,6 @@ public class PieRadarChartViewBase: ChartViewBase
                     var valsAtIndex = getYValsAtIndex(index);
                     
                     var dataSetIndex = 0;
-                    
-                    // get the dataset that is closest to the selection (PieChart only has one DataSet)
-                    if (self.isKindOfClass(RadarChartView))
-                    {
-                        dataSetIndex = ChartUtils.closestDataSetIndex(valsAtIndex, value: Double(distance / (self as! RadarChartView).factor), axis: nil);
-                    }
                     
                     var h = ChartHighlight(xIndex: index, dataSetIndex: dataSetIndex);
                     
