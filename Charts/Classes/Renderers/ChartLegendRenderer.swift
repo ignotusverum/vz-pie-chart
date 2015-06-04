@@ -43,26 +43,7 @@ public class ChartLegendRenderer: ChartRendererBase
                 var clrs: [UIColor] = dataSet.colors;
                 var entryCount = dataSet.entryCount;
                 
-                // if we have a barchart with stacked bars
-                if (dataSet.isKindOfClass(BarChartDataSet) && (dataSet as! BarChartDataSet).isStacked)
-                {
-                    var bds = dataSet as! BarChartDataSet;
-                    var sLabels = bds.stackLabels;
-                    
-                    for (var j = 0; j < clrs.count && j < bds.stackSize; j++)
-                    {
-                        labels.append(sLabels[j % sLabels.count]);
-                        colors.append(clrs[j]);
-                    }
-                    
-                    if (bds.label != nil)
-                    {
-                        // add the legend description label
-                        colors.append(nil);
-                        labels.append(bds.label);
-                    }
-                }
-                else if (dataSet.isKindOfClass(PieChartDataSet))
+                if (dataSet.isKindOfClass(PieChartDataSet))
                 {
                     var xVals = data.xVals;
                     var pds = dataSet as! PieChartDataSet;

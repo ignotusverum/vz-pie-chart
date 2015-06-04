@@ -16,43 +16,43 @@ import CoreGraphics.CGBase
 
 public class BarChartData: BarLineScatterCandleChartData
 {
-    public override init()
-    {
-        super.init();
-    }
-    
-    public override init(xVals: [String?]?, dataSets: [ChartDataSet]?)
-    {
-        super.init(xVals: xVals, dataSets: dataSets)
-    }
-    
-    public override init(xVals: [NSObject]?, dataSets: [ChartDataSet]?)
-    {
-        super.init(xVals: xVals, dataSets: dataSets)
-    }
-    
-    private var _groupSpace = CGFloat(0.8)
-    
-    /// The spacing is relative to a full bar width
-    public var groupSpace: CGFloat
-    {
-        get
-        {
-            if (_dataSets.count <= 1)
-            {
-                return 0.0;
-            }
-            return _groupSpace;
-        }
-        set
-        {
-            _groupSpace = newValue;
-        }
-    }
-    
-    /// Returns true if this BarData object contains grouped DataSets (more than 1 DataSet).
-    public var isGrouped: Bool
-    {
-        return _dataSets.count > 1 ? true : false;
-    }
+//    public override init()
+//    {
+//        super.init();
+//    }
+//    
+//    public override init(xVals: [String?]?, dataSets: [ChartDataSet]?)
+//    {
+//        super.init(xVals: xVals, dataSets: dataSets)
+//    }
+//    
+//    public override init(xVals: [NSObject]?, dataSets: [ChartDataSet]?)
+//    {
+//        super.init(xVals: xVals, dataSets: dataSets)
+//    }
+//    
+//    private var _groupSpace = CGFloat(0.8)
+//    
+//    /// The spacing is relative to a full bar width
+//    public var groupSpace: CGFloat
+//    {
+//        get
+//        {
+//            if (_dataSets.count <= 1)
+//            {
+//                return 0.0;
+//            }
+//            return _groupSpace;
+//        }
+//        set
+//        {
+//            _groupSpace = newValue;
+//        }
+//    }
+//    
+//    /// Returns true if this BarData object contains grouped DataSets (more than 1 DataSet).
+//    public var isGrouped: Bool
+//    {
+//        return _dataSets.count > 1 ? true : false;
+//    }
 }

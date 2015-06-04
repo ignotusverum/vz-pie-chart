@@ -110,57 +110,6 @@ public class ChartTransformer: NSObject
 
         return valuePoints;
     }
-    
-    
-    /// Transforms an arraylist of Entry into a double array containing the x and y values transformed with all matrices for the BARCHART.
-    public func generateTransformedValuesBarChart(entries: [BarChartDataEntry], dataSet: Int, barData: BarChartData, phaseY: CGFloat) -> [CGPoint]
-    {
-        var valuePoints = [CGPoint]();
-        valuePoints.reserveCapacity(entries.count);
-
-        var setCount = barData.dataSetCount;
-        var space = barData.groupSpace;
-
-        for (var j = 0; j < entries.count; j++)
-        {
-            var e = entries[j];
-
-            // calculate the x-position, depending on datasetcount
-            var x = CGFloat(e.xIndex + (j * (setCount - 1)) + dataSet) + space * CGFloat(j) + space / 2.0;
-            var y = e.value;
-            
-            valuePoints.append(CGPoint(x: x, y: CGFloat(y) * phaseY));
-        }
-
-        pointValuesToPixel(&valuePoints);
-
-        return valuePoints;
-    }
-    
-    /// Transforms an arraylist of Entry into a double array containing the x and y values transformed with all matrices for the BARCHART.
-    public func generateTransformedValuesHorizontalBarChart(entries: [ChartDataEntry], dataSet: Int, barData: BarChartData, phaseY: CGFloat) -> [CGPoint]
-    {
-        var valuePoints = [CGPoint]();
-        valuePoints.reserveCapacity(entries.count);
-        
-        var setCount = barData.dataSetCount;
-        var space = barData.groupSpace;
-        
-        for (var j = 0; j < entries.count; j++)
-        {
-            var e = entries[j];
-
-            // calculate the x-position, depending on datasetcount
-            var x = CGFloat(e.xIndex + (j * (setCount - 1)) + dataSet) + space * CGFloat(j) + space / 2.0;
-            var y = e.value;
-            
-            valuePoints.append(CGPoint(x: CGFloat(y) * phaseY, y: x));
-        }
-
-        pointValuesToPixel(&valuePoints);
-
-        return valuePoints;
-    }
 
     /// Transform an array of points with all matrices.
     // VERY IMPORTANT: Keep matrix order "value-touch-offset" when transforming.
