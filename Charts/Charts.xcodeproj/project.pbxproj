@@ -69,6 +69,7 @@
 		5BA8EC881A9D151C00CE82E1 /* ChartDataApproximatorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC751A9D151C00CE82E1 /* ChartDataApproximatorFilter.swift */; };
 		5BA8EC891A9D151C00CE82E1 /* ChartDataBaseFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC761A9D151C00CE82E1 /* ChartDataBaseFilter.swift */; };
 		5BD8F06D1AB897D500566E05 /* ChartViewPortHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8F06C1AB897D500566E05 /* ChartViewPortHandler.swift */; };
+		F5FFAB3A1B209CED004159A1 /* LineRadarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FFAB391B209CED004159A1 /* LineRadarChartDataSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		5BA8EC7B1A9D151C00CE82E1 /* ChartSelInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSelInfo.swift; sourceTree = "<group>"; };
 		5BA8EC7C1A9D151C00CE82E1 /* ChartUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartUtils.swift; sourceTree = "<group>"; };
 		5BD8F06C1AB897D500566E05 /* ChartViewPortHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewPortHandler.swift; sourceTree = "<group>"; };
+		F5FFAB391B209CED004159A1 /* LineRadarChartDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineRadarChartDataSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 		5BA8EC6F1A9D151C00CE82E1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F5FFAB391B209CED004159A1 /* LineRadarChartDataSet.swift */,
 				5B6A54B71AA74516000F57C2 /* BarChartData.swift */,
 				5B6A54B81AA74516000F57C2 /* BarChartDataEntry.swift */,
 				5B6A54B91AA74516000F57C2 /* BarChartDataSet.swift */,
@@ -425,6 +428,7 @@
 				5BA8EC881A9D151C00CE82E1 /* ChartDataApproximatorFilter.swift in Sources */,
 				5B6A549B1AA66B2C000F57C2 /* BarLineChartViewBase.swift in Sources */,
 				5B6A54A51AA66B92000F57C2 /* PieChartView.swift in Sources */,
+				F5FFAB3A1B209CED004159A1 /* LineRadarChartDataSet.swift in Sources */,
 				5B6A54D81AA74516000F57C2 /* LineChartData.swift in Sources */,
 				55E356581ADC63CD00A57971 /* BubbleChartDataEntry.swift in Sources */,
 				5B6A54911AA66A8D000F57C2 /* ChartDataRendererBase.swift in Sources */,
