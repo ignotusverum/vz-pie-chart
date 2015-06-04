@@ -67,7 +67,7 @@ public class PieChartView: PieRadarChartViewBase {
             return
         }
         
-        var radius = diameter / 2.0
+        var radius = diameter / 3.0
         
         var c = centerOffsets
         

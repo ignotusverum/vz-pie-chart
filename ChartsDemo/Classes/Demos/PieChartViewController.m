@@ -50,7 +50,7 @@
     _chartView.usePercentValuesEnabled = YES;
     _chartView.holeTransparent = YES;
     _chartView.centerTextFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.f];
-    _chartView.holeRadiusPercent = 0.58;
+    _chartView.holeRadiusPercent = 0.8;
     _chartView.transparentCircleRadiusPercent = 0.61;
     _chartView.descriptionText = @"";
     _chartView.drawCenterTextEnabled = YES;

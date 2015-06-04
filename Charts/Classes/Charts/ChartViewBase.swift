@@ -16,8 +16,7 @@
 import Foundation
 import UIKit
 
-@objc
-public protocol ChartViewDelegate {
+@objc public protocol ChartViewDelegate {
     /// Called when a value has been selected inside the chart.
     /// :entry: The selected Entry.
     /// :dataSetIndex: The index in the datasets array of the data object the Entrys DataSet is in.

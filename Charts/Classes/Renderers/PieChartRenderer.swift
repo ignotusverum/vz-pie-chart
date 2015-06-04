@@ -23,8 +23,8 @@ public class PieChartRenderer: ChartDataRendererBase
     public var drawHoleEnabled = true
     public var holeTransparent = true
     public var holeColor: UIColor? = UIColor.whiteColor()
-    public var holeRadiusPercent = CGFloat(0.5)
-    public var transparentCircleRadiusPercent = CGFloat(0.55)
+    public var holeRadiusPercent = CGFloat(0.8)
+    public var transparentCircleRadiusPercent = CGFloat(0.8)
     public var centerTextColor = UIColor.blackColor()
     public var centerTextFont = UIFont.systemFontOfSize(12.0)
     public var drawXLabelsEnabled = true
@@ -322,6 +322,7 @@ public class PieChartRenderer: ChartDataRendererBase
         
         for (var i = 0; i < indices.count; i++)
         {
+            
             // get the index to highlight
             var xIndex = indices[i].xIndex;
             if (xIndex >= drawAngles.count)
@@ -347,6 +348,7 @@ public class PieChartRenderer: ChartDataRendererBase
             
             angle *= _animator.phaseY;
             
+
             var sliceDegrees = drawAngles[xIndex];
             
             var shift = set.selectionShift;
@@ -358,7 +360,7 @@ public class PieChartRenderer: ChartDataRendererBase
                 width: circleBox.size.width + shift * 2.0,
                 height: circleBox.size.height + shift * 2.0);
             
-            CGContextSetFillColorWithColor(context, set.colorAt(xIndex).CGColor);
+            CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor);
             
             // redefine the rect that contains the arc so that the highlighted pie is not cut off
             
