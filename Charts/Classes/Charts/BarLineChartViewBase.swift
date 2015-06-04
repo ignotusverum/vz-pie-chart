@@ -1606,47 +1606,5 @@ internal class BarLineChartFillFormatter: NSObject, ChartFillFormatter
     {
         _chart = chart;
     }
-    
-    internal func getFillLinePosition(#dataSet: LineChartDataSet, data: LineChartData, chartMaxY: Double, chartMinY: Double) -> CGFloat
-    {
-        var fillMin = CGFloat(0.0);
-        
-        if (dataSet.yMax > 0.0 && dataSet.yMin < 0.0)
-        {
-            fillMin = 0.0;
-        }
-        else
-        {
-            if (!_chart.getAxis(dataSet.axisDependency).isStartAtZeroEnabled)
-            {
-                var max: Double, min: Double;
-                
-                if (data.yMax > 0.0)
-                {
-                    max = 0.0;
-                }
-                else
-                {
-                    max = chartMaxY;
-                }
-                
-                if (data.yMin < 0.0)
-                {
-                    min = 0.0;
-                }
-                else
-                {
-                    min = chartMinY;
-                }
-                
-                fillMin = CGFloat(dataSet.yMin >= 0.0 ? min : max);
-            }
-            else
-            {
-                fillMin = 0.0;
-            }
-        }
-        
-        return fillMin;
-    }
+
 }
