@@ -79,7 +79,6 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     
     /// the legend object containing all data associated with the legend
 
-    
     /// delegate to receive chart events
     public weak var delegate: ChartViewDelegate?
     
@@ -88,8 +87,6 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
     
     /// text that is displayed when the chart is empty that describes why the chart is empty
     public var noDataTextDescription: String?
-    
-
     
     /// object responsible for rendering the data
     public var renderer: ChartDataRendererBase?
@@ -409,42 +406,9 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
             }
         }
     }
-  
-    // MARK: - Markers
-
-    /// draws all MarkerViews on the highlighted positions
-    internal func drawMarkers(#context: CGContext)
-    {
-        // if there is no marker view or drawing marker is disabled
-
-        for (var i = 0, count = _indicesToHightlight.count; i < count; i++)
-        {
-            let highlight = _indicesToHightlight[i];
-            let xIndex = highlight.xIndex;
-            let dataSetIndex = highlight.dataSetIndex;
-
-            if (xIndex <= Int(_deltaX) && xIndex <= Int(_deltaX * _animator.phaseX))
-            {
-                let e = _data.getEntryForHighlight(highlight);
-
-                var pos = getMarkerPosition(entry: e, dataSetIndex: dataSetIndex);
-
-                // check bounds
-                if (!_viewPortHandler.isInBounds(x: pos.x, y: pos.y))
-                {
-                    continue;
-                }
-            }
-        }
-    }
     
-    /// Returns the actual position in pixels of the MarkerView for the given Entry in the given DataSet.
-    public func getMarkerPosition(#entry: ChartDataEntry, dataSetIndex: Int) -> CGPoint
-    {
-        fatalError("getMarkerPosition() cannot be called on ChartViewBase");
-    }
     
-    // MARK: - Animation
+     // MARK: - Animation
     
     /// Returns the animator responsible for animating chart values.
     public var animator: ChartAnimator!

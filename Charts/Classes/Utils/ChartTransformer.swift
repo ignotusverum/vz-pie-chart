@@ -27,13 +27,13 @@ public class ChartTransformer: NSObject
 
     public init(viewPortHandler: ChartViewPortHandler)
     {
-        _viewPortHandler = viewPortHandler;
+        _viewPortHandler = viewPortHandler;66
     }
 
     /// Prepares the matrix that transforms values to pixels. Calculates the scale factors from the charts size and offsets.
     public func prepareMatrixValuePx(#chartXMin: Double, deltaX: CGFloat, deltaY: CGFloat, chartYMin: Double)
     {
-        var scaleX = (_viewPortHandler.contentWidth / deltaX);
+        var scaleX = (_viewPortHandler.contentWidth / deltaX); 
         var scaleY = (_viewPortHandler.contentHeight / deltaY);
 
         // setup all matrices
