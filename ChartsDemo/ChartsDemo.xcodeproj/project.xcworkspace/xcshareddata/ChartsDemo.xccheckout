@@ -14,11 +14,11 @@
 		<string>https://github.com/redcirclegame/vz-pie-chart.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ChartsDemo.xcodeproj</string>
+	<string>ChartsDemo/ChartsDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D2DB5503FE619D3213839DE68ED794A53843F943</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/redcirclegame/vz-pie-chart.git</string>
