@@ -144,7 +144,6 @@
 				5BA8EC661A9D151C00CE82E1 /* Charts */,
 				5BA8EC691A9D151C00CE82E1 /* Components */,
 				5BA8EC6F1A9D151C00CE82E1 /* Data */,
-				5BA8EC741A9D151C00CE82E1 /* Filters */,
 				5B759ED41A9F98A90039D97F /* Renderers */,
 				5BA8EC781A9D151C00CE82E1 /* Utils */,
 			);
@@ -183,13 +182,6 @@
 				5B6A54C71AA74516000F57C2 /* PieChartDataSet.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		5BA8EC741A9D151C00CE82E1 /* Filters */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Filters;
 			sourceTree = "<group>";
 		};
 		5BA8EC781A9D151C00CE82E1 /* Utils */ = {
