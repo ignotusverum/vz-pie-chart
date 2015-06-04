@@ -35,8 +35,6 @@
 		5B6A54DB1AA74516000F57C2 /* PieChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A54C61AA74516000F57C2 /* PieChartData.swift */; };
 		5B6A54DC1AA74516000F57C2 /* PieChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A54C71AA74516000F57C2 /* PieChartDataSet.swift */; };
 		5BA8EC7D1A9D151C00CE82E1 /* ChartViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC671A9D151C00CE82E1 /* ChartViewBase.swift */; };
-		5BA8EC881A9D151C00CE82E1 /* ChartDataApproximatorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC751A9D151C00CE82E1 /* ChartDataApproximatorFilter.swift */; };
-		5BA8EC891A9D151C00CE82E1 /* ChartDataBaseFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC761A9D151C00CE82E1 /* ChartDataBaseFilter.swift */; };
 		5BD8F06D1AB897D500566E05 /* ChartViewPortHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8F06C1AB897D500566E05 /* ChartViewPortHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,8 +65,6 @@
 		5BA8EC6C1A9D151C00CE82E1 /* ChartLimitLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartLimitLine.swift; sourceTree = "<group>"; };
 		5BA8EC6D1A9D151C00CE82E1 /* ChartXAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartXAxis.swift; sourceTree = "<group>"; };
 		5BA8EC6E1A9D151C00CE82E1 /* ChartYAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartYAxis.swift; sourceTree = "<group>"; };
-		5BA8EC751A9D151C00CE82E1 /* ChartDataApproximatorFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataApproximatorFilter.swift; sourceTree = "<group>"; };
-		5BA8EC761A9D151C00CE82E1 /* ChartDataBaseFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDataBaseFilter.swift; sourceTree = "<group>"; };
 		5BA8EC791A9D151C00CE82E1 /* ChartColorTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColorTemplates.swift; sourceTree = "<group>"; };
 		5BA8EC7A1A9D151C00CE82E1 /* ChartHighlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartHighlight.swift; sourceTree = "<group>"; };
 		5BA8EC7B1A9D151C00CE82E1 /* ChartSelInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSelInfo.swift; sourceTree = "<group>"; };
@@ -195,8 +191,6 @@
 		5BA8EC741A9D151C00CE82E1 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				5BA8EC751A9D151C00CE82E1 /* ChartDataApproximatorFilter.swift */,
-				5BA8EC761A9D151C00CE82E1 /* ChartDataBaseFilter.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -300,7 +294,6 @@
 				5B6A54DB1AA74516000F57C2 /* PieChartData.swift in Sources */,
 				5B6A54AC1AA66C1E000F57C2 /* ChartAxisRendererBase.swift in Sources */,
 				5B680D221A9D17C30026A057 /* ChartXAxis.swift in Sources */,
-				5BA8EC891A9D151C00CE82E1 /* ChartDataBaseFilter.swift in Sources */,
 				5B6A54891AA66A1A000F57C2 /* PieChartRenderer.swift in Sources */,
 				5B680D231A9D17C30026A057 /* ChartYAxis.swift in Sources */,
 				5B378F171AD500A4009414A4 /* ChartAnimationEasing.swift in Sources */,
@@ -310,7 +303,6 @@
 				5BA8EC7D1A9D151C00CE82E1 /* ChartViewBase.swift in Sources */,
 				5B6A54DC1AA74516000F57C2 /* PieChartDataSet.swift in Sources */,
 				5B6A54701AA5DB34000F57C2 /* ChartRendererBase.swift in Sources */,
-				5BA8EC881A9D151C00CE82E1 /* ChartDataApproximatorFilter.swift in Sources */,
 				5B6A54A51AA66B92000F57C2 /* PieChartView.swift in Sources */,
 				5B6A54911AA66A8D000F57C2 /* ChartDataRendererBase.swift in Sources */,
 				5BD8F06D1AB897D500566E05 /* ChartViewPortHandler.swift in Sources */,
