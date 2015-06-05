@@ -24,7 +24,7 @@ public class PieChartRenderer: ChartDataRendererBase
     public var holeTransparent = true
     public var holeColor: UIColor? = UIColor.whiteColor()
     public var holeRadiusPercent = CGFloat(0.8)
-    public var transparentCircleRadiusPercent = CGFloat(0.8)
+    public var transparentCircleRadiusPercent = CGFloat(0.9)
     public var centerTextColor = UIColor.blackColor()
     public var centerTextFont = UIFont.systemFontOfSize(12.0)
     public var drawXLabelsEnabled = true
@@ -360,7 +360,7 @@ public class PieChartRenderer: ChartDataRendererBase
                 width: circleBox.size.width + shift * 2.0,
                 height: circleBox.size.height + shift * 2.0);
             
-            CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor);
+            CGContextSetFillColorWithColor(context, UIColor.brownColor ().CGColor);
             
             // redefine the rect that contains the arc so that the highlighted pie is not cut off
             

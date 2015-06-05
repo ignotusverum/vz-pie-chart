@@ -51,15 +51,15 @@
     _chartView.holeTransparent = YES;
     _chartView.centerTextFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.f];
     _chartView.holeRadiusPercent = 0.8;
-    _chartView.transparentCircleRadiusPercent = 0.61;
+    _chartView.transparentCircleRadiusPercent = 0.81;
     _chartView.descriptionText = @"";
     _chartView.drawCenterTextEnabled = YES;
     _chartView.drawHoleEnabled = YES;
     _chartView.rotationAngle = 0.0;
-    _chartView.rotationEnabled = YES;
-    _chartView.centerText = @"iOS Charts\nby Daniel Cohen Gindi";
+    _chartView.rotationEnabled = NO;
+    _chartView.centerText = @"iOS Charts";
 
-    _sliderX.value = 3.0;
+    _sliderX.value = 2.0;
     _sliderY.value = 100.0;
     [self slidersValueChanged:nil];
     
@@ -81,7 +81,7 @@
     // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
     for (int i = 0; i < count; i++)
     {
-        [yVals1 addObject:[[ChartDataEntry alloc] initWithValue:(arc4random_uniform(mult) + mult / 5) xIndex:i]];
+        [yVals1 addObject:[[ChartDataEntry alloc] initWithValue:(mult) + mult / 5 xIndex:i]];
     }
     
     NSMutableArray *xVals = [[NSMutableArray alloc] init];
@@ -190,14 +190,14 @@
     _sliderTextX.text = [@((int)_sliderX.value + 1) stringValue];
     _sliderTextY.text = [@((int)_sliderY.value) stringValue];
     
-    [self setDataCount:(_sliderX.value + 1) range:_sliderY.value];
+    [self setDataCount:(3) range:30];
 }
 
 #pragma mark - ChartViewDelegate
 
 - (void)chartValueSelected:(ChartViewBase * __nonnull)chartView entry:(ChartDataEntry * __nonnull)entry dataSetIndex:(NSInteger)dataSetIndex highlight:(ChartHighlight * __nonnull)highlight
 {
-    NSLog(@"chartValueSelected");
+    NSLog(@"entry %@",entry);
 }
 
 - (void)chartValueNothingSelected:(ChartViewBase * __nonnull)chartView
