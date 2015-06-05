@@ -55,7 +55,7 @@
     _chartView.descriptionText = @"";
     _chartView.drawCenterTextEnabled = YES;
     _chartView.drawHoleEnabled = YES;
-    _chartView.rotationAngle = 0.0;
+    _chartView.rotationAngle = -90.0;
     _chartView.rotationEnabled = NO;
     _chartView.centerText = @"iOS Charts";
 

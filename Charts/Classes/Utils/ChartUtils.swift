@@ -64,8 +64,6 @@ internal class ChartUtils
     }
 
     
-    
-    
     /// Calculates the position around a center point, depending on the distance from the center, and the angle of the position around the center.
     internal class func getPosition(#center: CGPoint, dist: CGFloat, angle: CGFloat) -> CGPoint
     {
@@ -126,36 +124,6 @@ internal class ChartUtils
         }
         
         return angle % 360.0;
-    }
-    
-    
-    /// MARK: - Bridging functions
-    
-    internal class func bridgedObjCGetUIColorArray (swift array: [UIColor?]) -> [NSObject]
-    {
-        var newArray = [NSObject]();
-        for val in array
-        {
-            if (val == nil)
-            {
-                newArray.append(NSNull());
-            }
-            else
-            {
-                newArray.append(val!);
-            }
-        }
-        return newArray;
-    }
-    
-    internal class func bridgedObjCGetUIColorArray (objc array: [NSObject]) -> [UIColor?]
-    {
-        var newArray = [UIColor?]();
-        for object in array
-        {
-            newArray.append(object as? UIColor)
-        }
-        return newArray;
     }
     
     internal class func bridgedObjCGetStringArray (swift array: [String?]) -> [NSObject]

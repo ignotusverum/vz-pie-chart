@@ -19,7 +19,7 @@ import UIKit.UIGestureRecognizer
 public class PieRadarChartViewBase: ChartViewBase
 {
     /// holds the normalized version of the current rotation angle of the chart
-    private var _rotationAngle = CGFloat(270.0)
+    private var _rotationAngle = CGFloat(90.0)
     
     /// holds the raw version of the current rotation angle of the chart
     private var _rawRotationAngle = CGFloat(270.0)
